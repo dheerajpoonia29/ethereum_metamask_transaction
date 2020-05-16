@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/body.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/demo.css"> <!-- Demo style -->
+
+	<title>Eth Transaction Via Metamask Wallet</title>
+</head>
+
+<body>
+
+	<header class="cd-main-header">
+
+		<div class="cd-main-header__logo"><a href="#0"><img src="img/cd-logo.svg" alt="Logo"></a></div>
+
+		<nav class="cd-main-nav js-main-nav">
+			<ul class="cd-main-nav__list js-signin-modal-trigger">
+				<!-- inser more links here -->
+				<li><span class="cd-main-nav__item cd-main-nav__item--signin">account</span></li>
+				<li><span id="account" class="cd-main-nav__item cd-main-nav__item--signup">Please Connect Dapp With Your Metamask Account !</span></li>
+			</ul>
+		</nav>
+
+	</header>
+
+
+	<div class="container">
+
+		<div id="loader" class="row loader text-center">
+            <div id="dxloader"></div>
+        </div>
+
+        <div class="row content" style="margin-top: 5%; height: auto;">
+
+	        	<!-- showing account detail -->
+	        	<div class="col-xs-12 col-md-7">
+	        		<div class="col-12 shadow p-4 mb-4 bg-white">
+	        			<h2 class=" text-center"><b>PAYER: TRANFER ETH TO RECEIPIENT ACCOUNT</b></h2>
+	        		</div>
+	        		<div id="deposit" class="col-12">
+	        			<form onSubmit="App.depositTask(); return false;">
+
+	        				<ul class="list-group">
+							  <li class="list-group-item">
+							  	<label for="inputfield1">Payer</label>
+						    	<input type="text" class="form-control input-lg" id="payer_address" aria-describedby="emailHelp" placeholder="Payer Address" disabled="">
+							  </li>
+
+							 <li class="list-group-item">
+							 	<label for="inputfield2">Payee</label>
+						    	<input type="text" class="form-control" id="payee_address" placeholder="Payee Address">					   				
+							 </li>
+
+							 <li class="list-group-item">
+							 	<label for="inputfield3">Eth Value</label>
+						    	<select class="form-control form-control-sm" id="eth_value">
+							  		<option value="10">10 eth</option>
+							  		<option value="50">50 eth</option>
+							  		<option value="150">150 eth</option>
+							  		<option value="200">200 eth</option>
+								</select>		
+							 </li>
+
+							 <button type="submit" class="text-center list-group-item list-group-item-action active">Deposit Money</button>
+							 
+						</ul>
+						  
+						  
+						</form>
+	        		</div>
+	        	</div>
+
+				<!-- bank detail -->
+				<div class="col-xs-12 col-md-5 text-center">
+					<div class="col-12 shadow p-4 mb-4 bg-white">
+	        			<h2 class=" text-center"><b>YOUR ACCOUNT : DETAIL</b></h2>
+	        		</div>
+	        		<div id="withdraw" class="col-12">
+	        			<ul class="list-group">
+						  <li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col">
+						  			<p> Current Balance </p>
+						  		</div>
+						  		<div class="col">
+						  			<p id="current_balance"></p>
+						  		</div>
+						  	</div>
+						  </li>
+
+						  <li class="list-group-item">
+						  	<div class="row">
+						  		<div class="col">
+						  			<p> Deposited Balance </p>
+						  		</div>
+						  		<div class="col">
+						  			<p id="deposit_balance">0</p>
+						  		</div>
+						  	</div>
+						  </li>
+
+						  <form onSubmit="App.withdrawTask(); return false;">
+						  		<button type="submit" class="list-group-item list-group-item-action active">
+    							Withdraw Money
+  								</button>
+
+  							</form>
+
+						</ul>
+	        				
+	        			</div>
+	        		</div>
+				</div>
+
+
+		</div>
+
+	</div>
+
+	<script src="js/main.js"></script> 
+	<!-- Resource JavaScript -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+</html>
